@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>SQL Injection</title>
+  </head>
+  <body>
+    <main class="container" style="margin-top: 90px;">
+      <h1>SQL Injection</h1>
+      <!-- <p>challenge: try to gain access to admin</p> -->
+        <form action="/signup" method="POST">
+            <h2>Signup</h2>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="username">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+              <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1">
+            </div>
+            {% if error_message != None %}
+              <div class="alert alert-danger" role="alert">
+                {{ error_message }}
+              </div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Signup</button>
+            <a href="/login" class="btn btn-link">Login</a>
+          </form>
+
+          <!-- <h2>What is SQL Injection about</h2>
+          <p>SQL injection essentially tricks the code into executing unwanted SQL commands.</p>
+          <h2>How Does this happen?</h2>
+          <p>SQL injection happens due to bad programming practices done by programmers. This is easily preventable if done using good programming practices.</p>
+          <h2>What hackers can do with SQL injection</h2>
+          <p>Hackers can gain access to account, modify the database and can even wipe out the entire database.</p> -->
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  </body>
+</html>
